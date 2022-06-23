@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\UserAuth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\MechanicController;
-use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +47,14 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     });
 });
 
+
+Route::get('test_mail',[App\Http\Controllers\UserController::class,'testmail']);
+Route::get('event',[App\Http\Controllers\UserAuth::class,'index']);
+
+
+// //Order Routes
+Route::get('orders', [OrderController::class, 'index']);
+Route::get('orders/{id}', [OrderController::class, 'show']);
+Route::post('orders', [OrderController::class, 'store']);
+Route::put('orders/{id}', [OrderController::class, 'update']);
+Route::delete('orders/{id}', [OrderController::class, 'delete']);

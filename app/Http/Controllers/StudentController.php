@@ -11,12 +11,27 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
+        // $data = [
+        //     [
+        //         'name' => 'abc',
+        //         'email' => 'abc',
+        //         'surname' => 'abc',
+        //     ],
+        //     [
+        //         'name' => 'xyz',
+        //         'email' => 'abc',
+        //         'surname' => 'abc',
+        //     ],
+        // ];
+        // dd($data, collect($data), collect($data)->where('name', 'xyz'));
+        // dd(collect($students)->all());
+
 
         //One To One Relationship
         // $student = Student::find(7);
         // $student = Student::with('result')->get();
         // dd($student[1]->result);
-        // dd($student);
+        
 
         //using inverse belongsTo()
         // $result = Result::get();

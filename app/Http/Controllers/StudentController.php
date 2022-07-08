@@ -11,19 +11,19 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
-        // $data = [
-        //     [
-        //         'name' => 'abc',
-        //         'email' => 'abc',
-        //         'surname' => 'abc',
-        //     ],
-        //     [
-        //         'name' => 'xyz',
-        //         'email' => 'abc',
-        //         'surname' => 'abc',
-        //     ],
-        // ];
-        // dd($data, collect($data), collect($data)->where('name', 'xyz'));
+        $data = [
+            [
+                'name' => 'abc',
+                'email' => 'abc',
+                'surname' => 'abc',
+            ],
+            [
+                'name' => 'xyz',
+                'email' => 'abc',
+                'surname' => 'abc',
+            ],
+        ];
+        dd($data, collect($data), collect($data)->where('name', 'xyz'));
         // dd(collect($students)->all());
 
 
